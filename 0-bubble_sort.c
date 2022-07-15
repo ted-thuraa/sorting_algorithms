@@ -12,9 +12,8 @@
 
 void bubble_sort(int *array, size_t size)
 {
-    size_t = temp;
-    size_t = i;
-    size_t = j;
+    size_t temp;
+    size_t i, j;
     int flag;
     
     if (size < 2)
@@ -26,13 +25,14 @@ void bubble_sort(int *array, size_t size)
        flag = 0;
        for (j = 0; j < (size - 1 - i); j++) /* no of checks reduces by i */
        {
-           if (array[i] > array[i + 1])
+           if (array[j] > array[j + 1])
            {
-               temp = array[i + 1];
-               array[i + 1] = array[i];
-               array[i] = temp;
+               temp = array[j + 1];
+               array[j + 1] = array[j];
+               array[j] = temp;
                /* Any time swaping occurs is a sign the loop should go on */ 
                flag = 1;
+	       print_array(array, size);
            }
        }
        if (flag == 0)
