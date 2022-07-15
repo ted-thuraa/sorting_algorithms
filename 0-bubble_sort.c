@@ -32,7 +32,7 @@ void bubble_sort(int *array, size_t size)
                array[j] = temp;
                /* Any time swaping occurs is a sign the loop should go on */ 
                flag = 1;
-	       print_array(array, size);
+               print_array(array, size);
            }
        }
        if (flag == 0)
