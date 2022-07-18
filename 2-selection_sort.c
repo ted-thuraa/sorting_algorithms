@@ -5,7 +5,7 @@
 * selection_sort -  implementation of selection_sort
 * @array: array to be sorted
 * @size: size of the array
-* 
+*
 * Return: void
 */
 
