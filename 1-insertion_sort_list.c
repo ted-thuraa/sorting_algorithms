@@ -9,9 +9,9 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *head;
-    listint_t *current;
-    listint_t *holder;
+    listint_t *head = NULL;
+    listint_t *holder = NULL;
+    int first, second;
 
     if (list == NULL)
     {
@@ -46,7 +46,7 @@ void insertion_sort_list(listint_t **list)
 
             }
         }
-        else:
+        else
         {
             head = head->next;
         }
