@@ -25,5 +25,7 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void swap_nodes(listint_t *first, listint_t *second);
+void merge_sort(int *array, size_t size);
+int *merge(int *left_side, int *right_side, int size_left, int size_right);
 
 #endif /*SORT*/

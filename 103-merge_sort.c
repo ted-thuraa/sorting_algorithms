@@ -22,11 +22,11 @@ void merge_sort(int *array, size_t size)
         mid = size / 2;
         merge_sort(array, mid);/* Left side*/
         merge_sort(array + mid, size - mid);/* right side */
-        //array points to the left side, array+mid points to the right side
+        /*array points to the left side, array+mid points to the right side*/
         temp_array = merge(array, array + mid, mid, size - mid);
         printf("[Done]; ");
         print_array(temp_array, size);
-        if (temp_array == NULL);
+        if (temp_array == NULL)
         {
             return;
         }
@@ -46,7 +46,7 @@ void merge_sort(int *array, size_t size)
  *
  * Return: the sorted array
  */
-int *merge(int *left_side, int *right_side, int *size_left, int *size_right)
+int *merge(int *left_side, int *right_side, int size_left, int size_right)
 {
     int *temp_array = NULL;
     int i, j, k;
@@ -83,13 +83,13 @@ int *merge(int *left_side, int *right_side, int *size_left, int *size_right)
     {
         while(j <= size_right)/* Not yet exhausted*/
         {
-            //fill it up
+            /*fill it up*/
             temp_array[k] = right_side[j];
             j++;
             k++;
         }
     }
-    //if opposite
+    /*if opposite*/
     else
     {
         while(i <= size_left)
