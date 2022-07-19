@@ -12,11 +12,11 @@
  * @next: Pointer to the next element of the list
  */
 typedef struct listint_s
-{
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
-} listint_t;
+	{
+		const int n;
+		struct listint_s *prev;
+		struct listint_s *next;
+	} listint_t;
 
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
@@ -25,7 +25,15 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void swap_nodes(listint_t *first, listint_t *second);
+
 void merge_sort(int *array, size_t size);
 int *merge(int *left_side, int *right_side, int size_left, int size_right);
+
+void selection_sort(int *array, size_t size);
+void swap_rows(int *i, int *j);
+int partition(int array[], int lo, int hi, size_t size);
+void quickSort(int array[], int lo, int hi, size_t size);
+void quick_sort(int *array, size_t size);
+
 
 #endif /*SORT*/
