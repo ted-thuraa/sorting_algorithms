@@ -35,8 +35,8 @@ int partition(int array[], int lo, int hi, size_t size);
 void quickSort(int array[], int lo, int hi, size_t size);
 void quick_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
-void heapify(int *array, size_t size, int i)
-void swap(int a, int b, int * array)
+void heapify(int *array, size_t size, size_t original_s);
+void swap(int a, int b, int * array);
 
 
 #endif /*SORT*/
