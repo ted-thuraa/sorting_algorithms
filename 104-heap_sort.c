@@ -7,51 +7,81 @@
  *
  * Return: void
  */
-
 void heap_sort(int *array, size_t size)
 {
-    size_t n = size
-    /*Start from the no leaf nodes*/
-    for (i = n / 2; i >= 1; i--)
-    {
-        /*Build the max heap*/
-        heapify(array, n, i);
-    }
-    /*Start deletion from the root node only*/
-    for (i = n; i >= 1; i--)
-    {
-        swap(array[1], array[i], array);
-        /*after swapping the array is no longer a max heap so*/
-        heapify(array, n, 1)/*why 1? heapify will be called only on the root node only during deletion*/
-    }
+	size_t temp_s = size;
+
+	while (temp_s > 1)
+	{
+		heapify(array, temp_s, size);
+		swaper(0, temp_s - 1, array);
+		print_array(array, size);
+		temp_s--;
+	}
 }
-void heapify(int *array, size_t size, int i)
+
+/**
+ * heapify - builds a complete max. heap from an array in swap
+ * @array: array to be sorted
+ * @size: size of the array
+ * @original_s: original size of the array, for printing purposes
+ *
+ * Return: void
+ */
+void heapify(int *array, size_t size, size_t original_s)
 {
-    int largest = i;
-    /*child nodes*/
-    int left = (i * 2);
-    int right = (i * 2) + 1;
+	size_t i;
 
-    while (left < size && array[left] > array[largest])
-    {
-        largest = left;
-    }
-    while (right < n && array[right] > array[largest])
-    {
-        largest = right;
-    }
-    if (largest != i)
-    {
-        swap(array[largest], array[i], array);
-        heapify(array, size, largest);
-    }
-
+	for (i = (size - 1); (signed int) i >= 0 ; i--)
+	{
+		while (LEFT(i) < size)
+		{
+			if (RIGHT(i) < size)
+			{
+				if (array[RIGHT(i)] > array[i] || array[LEFT(i)] > array[i])
+				{
+					if (array[RIGHT(i)] >= array[LEFT(i)])
+					{
+						swaper(i, RIGHT(i), array);
+						i = RIGHT(i);
+						print_array(array, original_s);
+					}
+					else
+					{
+						swaper(i, LEFT(i), array);
+						i = LEFT(i);
+						print_array(array, original_s);
+					}
+				}
+				else
+					break;
+			}
+			else
+			{
+				if (array[LEFT(i)] > array[i])
+				{
+					swaper(i, LEFT(i), array);
+					print_array(array, original_s);
+				}
+				break;
+			}
+		}
+	}
 }
-void swap(int a, int b, int * array)
-{
-    int temp;
 
-    temp = array[a];
-    array[a] = array[b];
-    array[b] = temp;
+/**
+ * swaper - swap to integers
+ * @a: first integer
+ * @b: secoond integer
+ * @array: array
+ *
+ * Return: swaped integers
+ */
+void swaper(int a, int b, int *array)
+{
+	int temp;
+
+	temp = array[a];
+	array[a] = array[b];
+	array[b] = temp;
 }
