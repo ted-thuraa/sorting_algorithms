@@ -1,5 +1,10 @@
 #include "sort.h"
 
+#define LEFT(i) ((2 * i) + 1)
+#define RIGHT(i) ((2 * i) + 2)
+#define PARENT(i) ((i - 1) / 2)
+
+
 /**
  * heap_sort - implementation of heap sort, applies the sift down method
  * @array: array to be sorted
