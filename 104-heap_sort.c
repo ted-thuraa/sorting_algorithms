@@ -10,7 +10,7 @@
 
 void heap_sort(int *array, size_t size)
 {
-    size_t n = size
+    size_t n = size;
     /*Start from the no leaf nodes*/
     for (i = n / 2; i >= 1; i--)
     {
@@ -22,7 +22,7 @@ void heap_sort(int *array, size_t size)
     {
         swap(array[1], array[i], array);
         /*after swapping the array is no longer a max heap so*/
-        heapify(array, n, 1)/*why 1? heapify will be called only on the root node only during deletion*/
+        heapify(array, n, 1);/*why 1? heapify will be called only on the root node only during deletion*/
     }
 }
 void heapify(int *array, size_t size, int i)
