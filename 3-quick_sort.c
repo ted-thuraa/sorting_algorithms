@@ -31,7 +31,7 @@ int partition(int array[], int lo, int hi, size_t size)
 	int pivot = array[hi];
 	int i = (lo - 1), j;
 
-	for (j = lo; j < hi; j++)
+	for (j = lo; j <= hi; j++)
 	{
 		if (array[j] <= pivot)
 		{
@@ -40,13 +40,10 @@ int partition(int array[], int lo, int hi, size_t size)
 			{
 				swap_rows(&array[i], &array[j]);
 				print_array(array, size);
-				return (i + 1);
 			}
 		}
 	}
-	swap_rows(&array[i + 1], &array[hi]);
-	print_array(array, size);
-	return (i + 1);
+	return (i);
 }
 
 /**
